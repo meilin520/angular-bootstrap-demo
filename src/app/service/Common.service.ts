@@ -5,7 +5,12 @@ import { Breadcrumb } from '../types';
   providedIn: 'root'
 })
 export class CommonService {
-  private breadcrumb: Breadcrumb[] = []
+  private breadcrumb: Breadcrumb[] = [
+    {
+      title: '首页',
+      href: '/home'
+    }
+  ]
 
   constructor() { }
 

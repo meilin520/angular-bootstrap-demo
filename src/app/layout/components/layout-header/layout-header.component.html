@@ -1,7 +1,7 @@
 <header class="layout-header">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li>当前位置：</li>
+      <li class="tips">当前位置：</li>
       <li class="breadcrumb-item" *ngFor="let item of breadcrumb" [attr.aria-current]="item.href?'page':''" class=" {{item.href?'active':''}}">
         {{item.title}}
       </li>
