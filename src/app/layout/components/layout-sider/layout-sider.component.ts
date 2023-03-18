@@ -1,22 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-type SubMenu = {
-  id: string | number
-  title: string
-  url: string
-}
-
-type Menu = {
-  id: string|number
-  title: string
-  url?: string
-  children?: SubMenu[]
-}
-
-type Breadcrumb = {
-  title: string
-  href: string|boolean|undefined
-}
+import { CommonService } from 'src/app/service';
+import { Menu, SubMenu, Breadcrumb } from 'src/app/types';
 
 @Component({
   selector: 'app-layout-sider',
@@ -39,7 +23,7 @@ export class LayoutSiderComponent implements OnInit {
     },
     {
       id: 2,
-      title: '用户管理',
+      title: '文章管理',
       children: [
         {
           id: 21,
@@ -55,7 +39,7 @@ export class LayoutSiderComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  constructor(private commonService: CommonService) {
 
   }
 
@@ -72,12 +56,14 @@ export class LayoutSiderComponent implements OnInit {
       href: menu.url?menu.url:false
     })
 
-    childrenMenu.forEach((item)=>{
+    if(childrenMenu.length>0){
       breadcrumb.push({
-        title: item.title,
-        href: item.url
+        title: childrenMenu[j].title,
+        href: childrenMenu[j].url? childrenMenu[j].url: false,
       })
-    })
+    }
+
+    this.commonService.setBreadCrumb(breadcrumb)
   }
 
 }
