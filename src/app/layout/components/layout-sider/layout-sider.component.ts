@@ -44,7 +44,7 @@ export class LayoutSiderComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.menus,99)
+
   }
 
   selectCurrentMenu(menu: Menu, i: number, j: number): void {

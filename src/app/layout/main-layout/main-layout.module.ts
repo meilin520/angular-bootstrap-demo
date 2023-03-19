@@ -1,5 +1,5 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MainLayoutComponent } from './main-layout.component';
 import { LayoutHeaderComponent } from '../components/layout-header/layout-header.component';
 import { LayoutContentComponent } from '../components/layout-content/layout-content.component';
@@ -10,7 +10,7 @@ import { LayoutWrapperComponent } from '../components/layout-wrapper/layout-wrap
 
 @NgModule({
   imports: [
-    CommonModule,
+    BrowserModule,
     AppRoutingModule
   ],
   declarations: [

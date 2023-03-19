@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.sass'],
-  providers: [CommonService]
+  providers: [CommonService],
 })
 
 export class MainLayoutComponent implements OnInit{

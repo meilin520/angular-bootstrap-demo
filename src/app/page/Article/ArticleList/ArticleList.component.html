@@ -1,3 +1,50 @@
 <p>
   ArticleList works!
+  <br>
+  <button type="button" class="btn btn-success" (click)="addArticle()">添加新数据</button>
 </p>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">标题</th>
+        <th scope="col">缩略图</th>
+        <th scope="col">作者</th>
+        <th scope="col">分类</th>
+        <th scope="col">标签</th>
+        <th scope="col">简介</th>
+        <th scope="col">内容</th>
+        <th scope="col">创建日期</th>
+        <th scope="col">浏览量</th>
+        <th scope="col">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <th scope="row">{{article.id}}</th>
+        <td>
+          <p class="w100">{{article.title}}</p>
+        </td>
+        <td>
+          <img class="img-thumbnail" src="{{article.thumbnail}}" width="150" height="80" alt="">
+        </td>
+        <td>{{article.author}}</td>
+        <td>{{article.categoryName}}</td>
+        <td>{{article.tags}}</td>
+        <td>
+          <p class="ellipsis-one-row w150">{{article.introduction}}</p>
+        </td>
+        <td>
+          <p class="ellipsis-one-row w200">{{article.content}}</p>
+        </td>
+        <td>{{article.createDate}}</td>
+        <td>{{article.views}}</td>
+        <td>
+          <button style="margin-right: 5px;" type="button" class="btn btn-outline-warning btn-sm">编辑</button>
+          <button type="button" class="btn btn-outline-danger btn-sm">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
